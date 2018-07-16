@@ -15,7 +15,7 @@
   	<% end %>
 
     <% if signed_in? %>
-      <div>Hola <%= current_user.name %></div>
+      <div>Welcome, <%= current_user.name %>. <%= link_to 'Sign Out', logout_path, method: :delete %></div>
     <% end %>
 
     <%= yield %>
