@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	get '/questions/:id', to: 'questions#show', as: 'question'
 	get '/questions/:id/edit', to: 'questions#edit', as: 'edit_question'
 	patch '/questions/:id', to: 'questions#update'
+	delete '/questions/:id', to: 'questions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

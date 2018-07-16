@@ -17,7 +17,10 @@
 						<td><%= question.id %></td>
 						<td><%= link_to question.title, question %></td>
 						<td><%= question.description %></td>
-						<td><%= link_to 'Edit', edit_question_path(question) %></td>
+						<td>
+							<%= link_to 'Edit', edit_question_path(question) %>
+							<%= link_to 'Remove', question, method: :delete, data: { confirm: "Are you sure?" } %>							
+						</td>
 					</tr>
 				<% end %>
 			</table>
