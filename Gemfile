@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'gravatar-ultimate'
+gem 'xmlrpc'
 
 
 group :development, :test do

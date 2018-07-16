@@ -1,37 +1,20 @@
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1">
 
-			<h1>Questions</h1>
+      <div class="questions">
 
-			<% if signed_in? %>
-				<div class="text-right">
-					<%= link_to 'Ask Question', new_question_path, class: 'btn btn-primary' %>
-				</div>
-			<% end %>
+        <% @questions.each do |question| %>
+        	<div class="question clearfix">
+          	<div class="question-details">
+            	<span class="question-title"><%= link_to question.title, question %></span>
+            	<span class="question-description"><%= question.description %></span>
+          	</div>
+        	</div>
+        <% end %>
 
-			<table class="table">
-				<tr>
-					<th>Id</th>
-					<th>Title</th>
-					<th>Description</th>
-					<th></th>
-				</tr>
-				<% @questions.each do |question| %>
-					<tr>
-						<td><%= question.id %></td>
-						<td><%= link_to question.title, question %></td>
-						<td><%= question.description %></td>
-						<td>
-							<% if signed_in? %>
-								<%= link_to 'Edit', edit_question_path(question) %>
-								<%= link_to 'Remove', question, method: :delete, data: { confirm: "Are you sure?" } %>
-							<% end %>							
-						</td>
-					</tr>
-				<% end %>
-			</table>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </div>
