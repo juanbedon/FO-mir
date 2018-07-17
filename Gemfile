@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'gravatar-ultimate'
 gem 'xmlrpc'
 gem 'annotate'
+gem 'paperclip'
 
 
 group :development, :test do
