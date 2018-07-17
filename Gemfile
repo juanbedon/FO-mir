@@ -36,6 +36,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'gravatar-ultimate'
 gem 'xmlrpc'
+gem 'annotate'
 
 
 group :development, :test do
