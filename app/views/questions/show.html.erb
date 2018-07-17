@@ -1,7 +1,16 @@
 <div class="question-page">
   <header class="question-header">
+
     <h1><%= @question.title %></h1>
     <p><%= @question.description %></p>
+
+    <% if signed_in? && @question.user == current_user %>
+      <div class="actions">
+        <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_question_path(@question) %>
+        <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, @question, method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>    
+    <% end %>
+    
   </header>
 
   <div class="container">
