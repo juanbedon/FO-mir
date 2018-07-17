@@ -7,9 +7,14 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :bigint(8)
 #
 
 class Question < ActiveRecord::Base
+
+	belongs_to :user
+
 	validates :title, presence: true
 	validates :description, presence: true
+
 end
