@@ -23,6 +23,18 @@
         font-size: 16px;
       }
     }
+    .question-comments {
+      float: right;
+      color: #ccc;
+      padding: 10px;
+
+      .fa-comment-alt { font-size: 21px; }
+      .comment-count {
+        margin-left: 15px;
+        font-size: 18px;
+        vertical-align: text-bottom;
+      }
+    }
   }
 }
 

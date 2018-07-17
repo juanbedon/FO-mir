@@ -15,15 +15,38 @@
 
   <div class="container">
     <div class="row">
+
       <div class="col-sm-10 offset-sm-1">
         <div class="votes">
-          <h2>Votos</h2>
+          <h2>Votes</h2>
         </div>
 
         <div class="comments">
-          <h2>Comentarios</h2>
+          <h2>Comments</h2>
+
+          <% @question.comments.each do |comment| %>
+            <div class="card card-default mb-3">
+              <header class="card-header"><img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="rounded" /> <%= comment.user.name %></header>
+              <div class="card-body"><%= comment.body %></div>
+            </div>
+          <% end %>
+
+          <% if signed_in? %>
+            <%= form_for [@question, @question.comments.build] do |f| %>
+              <div class="form-group">
+                <%= f.text_area :body, class: "form-control", placeholder: "Leave a Comment" %>
+              </div>
+
+              <div class="actions text-right">
+                <%= f.submit "Add Comment", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          <% end %>
+
         </div>
+
       </div>
     </div>
+
   </div>
 </div>
