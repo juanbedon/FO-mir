@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Flow<span class="light">Overstack</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mx-2">
+        <% if signed_in? %>
+          <li class="nav-item">
+            <img src="<%= Gravatar.new("#{current_user.email}").image_url %>" class="rounded mr-2" />
+          </li>
+          <li class="nav-item ml-1 mr-3"><%= link_to "Log Out", logout_path, method: :delete, class: 'menu' %></li>
+          <li class="nav-item mr-2"><%= link_to "<span class='fas fa-plus'></span>".html_safe, new_question_path %></li>
+        <% else %>
+          <li class="nav-item mx-2"><%= link_to "Sign Up", new_user_path, class: 'menu' %></li>
+          <li class="nav-item"><%= link_to "Log In", login_path, class: 'menu' %></li>
+        <% end %>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</nav>

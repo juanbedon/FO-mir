@@ -1,6 +1,24 @@
 @import "bootstrap";
 @import "questions";
 
+body {
+	background-color: #F1ECE9;
+}
+
 .navbar-nav > li {
   img { width: 26px; }
 }
+
+.navbar-brand{
+	font-weight: bolder;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+.light {
+	font-weight: 300;
+	color: #F04500;
+}
+

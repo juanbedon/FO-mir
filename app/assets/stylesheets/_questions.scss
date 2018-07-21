@@ -1,7 +1,17 @@
+.menu {
+  color: #949494;
+  &:hover{ color: #fff; text-decoration: none; }
+}
+
+.fa-plus {
+  color: #F04500;
+}
+
 .questions {
   margin-top: 40px;
 
   .question {
+
     padding: 15px 10px;
     border-radius: 5px;
 
@@ -68,7 +78,7 @@
     }
     .question-comments {
       float: right;
-      color: #ccc;
+      color: #303030;
       padding: 10px;
 
       .fa-comment-alt { font-size: 21px; }
