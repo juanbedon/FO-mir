@@ -4,7 +4,7 @@
   <header class="question-header" <%= header_style %>>
 
     <h1><%= @question.title %></h1>
-    <p><%= @question.description %></p>
+    <p><%= markdown @question.description %></p>
 
     <% if signed_in? && @question.user == current_user %>
       <div class="actions">
@@ -34,7 +34,7 @@
           <% @question.comments.each do |comment| %>
             <div class="card card-default mb-3">
               <header class="card-header"><img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="rounded" /> <%= comment.user.name %></header>
-              <div class="card-body"><%= comment.body %></div>
+              <div class="card-body"><%= markdown comment.body %></div>
             </div>
           <% end %>
 

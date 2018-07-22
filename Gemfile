@@ -40,6 +40,8 @@ gem 'gravatar-ultimate'
 gem 'xmlrpc'
 gem 'annotate'
 gem 'paperclip'
+gem 'pygments.rb'
+gem 'redcarpet'
 
 
 group :development, :test do

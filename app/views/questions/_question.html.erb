@@ -21,7 +21,7 @@
 
                 <div class="question-details">
                   <span class="question-title"><%= link_to question.title, question %></span>
-                  <span class="question-description"><%= question.description %></span>
+                  <span class="question-description"><%= markdown question.description.truncate(50) %></span>
                 </div>
                 <div class="question-comments">
                   <span class="fas fa-comment-alt"></span>

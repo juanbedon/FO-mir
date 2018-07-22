@@ -26,6 +26,8 @@ class Question < ActiveRecord::Base
 	validates :description, presence: true
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+	scope :most_recent, -> { order(created_at: :desc) }
+
 	def voted_by?(user)
 		votes.exists?(user: user)
 	end
