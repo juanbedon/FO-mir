@@ -17,10 +17,10 @@
           <li class="nav-item mx-2"><%= link_to "Sign Up", new_user_path, class: 'menu' %></li>
           <li class="nav-item"><%= link_to "Log In", login_path, class: 'menu' %></li>
         <% end %>
+        <%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do %>
+          <%= text_field_tag :keyword, nil, placeholder: "Search", class: 'form-control' %>
+        <% end %>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
     </div>
   </div>
 </nav>

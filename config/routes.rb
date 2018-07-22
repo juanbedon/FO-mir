@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-	root 'questions#index'
+	root to: 'questions#index'
+	
+  get 'search/create'
 
 	get 'login', to: 'sessions#new'
 	post 'login', to: 'sessions#create'
