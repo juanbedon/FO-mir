@@ -21,6 +21,7 @@
 
                 <div class="question-details">
                   <span class="question-title"><%= link_to question.title, question %></span>
+                  <small>Asked by ____ on <%= question.created_at.strftime('%-b %-d, %Y')%></small>
                   <span class="question-description"><%= markdown question.description.truncate(50) %></span>
                 </div>
                 <div class="question-comments">
